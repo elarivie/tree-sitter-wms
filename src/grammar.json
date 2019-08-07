@@ -1,0 +1,109 @@
+{
+  "name": "WMS",
+  "rules": {
+    "WMS": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "RULE"
+      }
+    },
+    "RULE": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "NON_TERMINAL"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SPACING"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "EQUAL"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SPACING"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "TERMINAL"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SPACING"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "COMMENT"
+        },
+        {
+          "type": "STRING",
+          "value": ";"
+        }
+      ]
+    },
+    "SPACING": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "STRING",
+        "value": " "
+      }
+    },
+    "EQUAL": {
+      "type": "STRING",
+      "value": "::="
+    },
+    "NON_TERMINAL": {
+      "type": "PATTERN",
+      "value": "[A-Z_]+"
+    },
+    "TERMINAL": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "PATTERN",
+          "value": "[0-9A-Z]{2}"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
+    },
+    "COMMENT": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "--"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "BLABLABLA"
+        }
+      ]
+    },
+    "BLABLABLA": {
+      "type": "PATTERN",
+      "value": "[^;]*"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+
