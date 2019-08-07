@@ -8,3 +8,6 @@ INSTALL:
 	npm install --dev
 	./node_modules/.bin/node-gyp configure
 	./node_modules/.bin/node-gyp build
+
+PUBLISH:
+	npm publish
