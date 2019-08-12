@@ -1,0 +1,371 @@
+{
+  "name": "WMS",
+  "rules": {
+    "WMS": {
+      "type": "REPEAT",
+      "content": {
+        "type": "SYMBOL",
+        "name": "RULE"
+      }
+    },
+    "RULE": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "NON_TERMINAL_NAME"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "EQUAL"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "LEFT"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "OR"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "COMMENT"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "RULE_END"
+        }
+      ]
+    },
+    "RULE_END": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[\\r\\n]*"
+        }
+      ]
+    },
+    "MIN": {
+      "type": "SYMBOL",
+      "name": "HEX"
+    },
+    "MIN_MAX": {
+      "type": "SYMBOL",
+      "name": "HEX"
+    },
+    "MAX": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "HEX"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_INFINITY"
+        }
+      ]
+    },
+    "RANGE_MIN_MAX": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "MIN"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "SYMBOL_RANGE_DELIMITER"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "MAX"
+            }
+          ]
+        },
+        {
+          "type": "SYMBOL",
+          "name": "MIN_MAX"
+        }
+      ]
+    },
+    "GROUP": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_GROUP_OPEN"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "LEFT"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "OR"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_GROUP_CLOSE"
+        }
+      ]
+    },
+    "TOKEN": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "SPACING"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "GROUP"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "TERMINAL"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "NON_TERMINAL_NAME"
+            }
+          ]
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "MULTI"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
+    },
+    "LEFT": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "TOKEN"
+      }
+    },
+    "RIGHT": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "TOKEN"
+      }
+    },
+    "OR": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_OR"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "RIGHT"
+        }
+      ]
+    },
+    "HEX": {
+      "type": "PATTERN",
+      "value": "[0-9A-F]+"
+    },
+    "SPACING": {
+      "type": "STRING",
+      "value": " "
+    },
+    "EQUAL": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "SPACING"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_EQUAL"
+        }
+      ]
+    },
+    "COMMENT": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_COMMENT_START"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "BLABLABLA"
+        }
+      ]
+    },
+    "BLABLABLA": {
+      "type": "PATTERN",
+      "value": "[^;]*"
+    },
+    "NON_TERMINAL_NAME": {
+      "type": "PATTERN",
+      "value": "[0-9A-Z_]+"
+    },
+    "TERMINAL": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_TERMINAL_OPEN"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "RANGE_MIN_MAX"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_TERMINAL_CLOSE"
+        }
+      ]
+    },
+    "MULTI": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "MULTI_01"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "MULTI_0p"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "MULTI_1p"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "MULTI_X"
+        }
+      ]
+    },
+    "MULTI_01": {
+      "type": "STRING",
+      "value": "?"
+    },
+    "MULTI_0p": {
+      "type": "STRING",
+      "value": "*"
+    },
+    "MULTI_1p": {
+      "type": "STRING",
+      "value": "+"
+    },
+    "MULTI_X": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_MULTI_X_OPEN"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "RANGE_MIN_MAX"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "SYMBOL_MULTI_X_CLOSE"
+        }
+      ]
+    },
+    "SYMBOL_INFINITY": {
+      "type": "STRING",
+      "value": "∞"
+    },
+    "SYMBOL_EQUAL": {
+      "type": "STRING",
+      "value": "::="
+    },
+    "SYMBOL_MULTI_X_OPEN": {
+      "type": "STRING",
+      "value": "{"
+    },
+    "SYMBOL_MULTI_X_CLOSE": {
+      "type": "STRING",
+      "value": "}"
+    },
+    "SYMBOL_TERMINAL_OPEN": {
+      "type": "STRING",
+      "value": "["
+    },
+    "SYMBOL_TERMINAL_CLOSE": {
+      "type": "STRING",
+      "value": "]"
+    },
+    "SYMBOL_GROUP_OPEN": {
+      "type": "STRING",
+      "value": "("
+    },
+    "SYMBOL_GROUP_CLOSE": {
+      "type": "STRING",
+      "value": ")"
+    },
+    "SYMBOL_COMMENT_START": {
+      "type": "STRING",
+      "value": "--"
+    },
+    "SYMBOL_OR": {
+      "type": "STRING",
+      "value": "|"
+    },
+    "SYMBOL_RANGE_DELIMITER": {
+      "type": "STRING",
+      "value": "-"
+    }
+  },
+  "extras": [
+    {
+      "type": "PATTERN",
+      "value": "\\s"
+    }
+  ],
+  "conflicts": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": []
+}
+

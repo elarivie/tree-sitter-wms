@@ -1,0 +1,427 @@
+[
+  {
+    "type": "COMMENT",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "BLABLABLA",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_COMMENT_START",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "EQUAL",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "SPACING",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_EQUAL",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "GROUP",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "LEFT",
+          "named": true
+        },
+        {
+          "type": "OR",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_GROUP_CLOSE",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_GROUP_OPEN",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "LEFT",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "TOKEN",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "MAX",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "HEX",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_INFINITY",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "MIN",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "HEX",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "MIN_MAX",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "HEX",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "MULTI",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "MULTI_01",
+          "named": true
+        },
+        {
+          "type": "MULTI_0p",
+          "named": true
+        },
+        {
+          "type": "MULTI_1p",
+          "named": true
+        },
+        {
+          "type": "MULTI_X",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "MULTI_X",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "RANGE_MIN_MAX",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_MULTI_X_CLOSE",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_MULTI_X_OPEN",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "OR",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "RIGHT",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_OR",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "RANGE_MIN_MAX",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "MAX",
+          "named": true
+        },
+        {
+          "type": "MIN",
+          "named": true
+        },
+        {
+          "type": "MIN_MAX",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_RANGE_DELIMITER",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "RIGHT",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "TOKEN",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "RULE",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "COMMENT",
+          "named": true
+        },
+        {
+          "type": "EQUAL",
+          "named": true
+        },
+        {
+          "type": "LEFT",
+          "named": true
+        },
+        {
+          "type": "NON_TERMINAL_NAME",
+          "named": true
+        },
+        {
+          "type": "OR",
+          "named": true
+        },
+        {
+          "type": "RULE_END",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "RULE_END",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "TERMINAL",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "RANGE_MIN_MAX",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_TERMINAL_CLOSE",
+          "named": true
+        },
+        {
+          "type": "SYMBOL_TERMINAL_OPEN",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "TOKEN",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "GROUP",
+          "named": true
+        },
+        {
+          "type": "MULTI",
+          "named": true
+        },
+        {
+          "type": "NON_TERMINAL_NAME",
+          "named": true
+        },
+        {
+          "type": "SPACING",
+          "named": true
+        },
+        {
+          "type": "TERMINAL",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "WMS",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "RULE",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "HEX",
+    "named": true
+  },
+  {
+    "type": "SPACING",
+    "named": true
+  },
+  {
+    "type": "BLABLABLA",
+    "named": true
+  },
+  {
+    "type": "NON_TERMINAL_NAME",
+    "named": true
+  },
+  {
+    "type": "MULTI_01",
+    "named": true
+  },
+  {
+    "type": "MULTI_0p",
+    "named": true
+  },
+  {
+    "type": "MULTI_1p",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_INFINITY",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_EQUAL",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_MULTI_X_OPEN",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_MULTI_X_CLOSE",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_TERMINAL_OPEN",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_TERMINAL_CLOSE",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_GROUP_OPEN",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_GROUP_CLOSE",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_COMMENT_START",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_OR",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_RANGE_DELIMITER",
+    "named": true
+  }
+]
