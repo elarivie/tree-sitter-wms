@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-wms",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "WMS grammar for tree-sitter",
   "main": "index.js",
   "keywords": [
