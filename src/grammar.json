@@ -294,15 +294,15 @@
           "name": "ENCODING_NAME"
         },
         {
-          "type": "REPEAT1",
+          "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
             "name": "SPACING"
           }
         },
         {
-          "type": "STRING",
-          "value": "&"
+          "type": "SYMBOL",
+          "name": "SYMBOL_ENCODING_END"
         },
         {
           "type": "REPEAT",
@@ -390,6 +390,10 @@
     "SYMBOL_TERMINAL_CLOSE": {
       "type": "STRING",
       "value": "]"
+    },
+    "SYMBOL_ENCODING_END": {
+      "type": "STRING",
+      "value": "&"
     },
     "SYMBOL_GROUP_OPEN": {
       "type": "STRING",

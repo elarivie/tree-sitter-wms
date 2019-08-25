@@ -18,11 +18,8 @@ module.exports = grammar({
     MIN_MAX: $ => $.HEX,
     MAX: $ => choice($.HEX, $.SYMBOL_INFINITY),
     RANGE_MIN_MAX: $ => choice(seq($.MIN, $.SYMBOL_RANGE_DELIMITER, $.MAX), $.MIN_MAX),
-
     GROUP: $ => seq($.SYMBOL_GROUP_OPEN, $.LEFT, repeat($.OR), $.SYMBOL_GROUP_CLOSE),
-
     TOKEN: $ => seq(repeat($.SPACING), choice($.GROUP, $.TERMINAL, $.NON_TERMINAL_NAME), optional($.MULTI)),
-
     LEFT: $ => repeat1($.TOKEN),
     RIGHT: $ => repeat1($.TOKEN),
     OR: $ => seq($.SYMBOL_OR, $.RIGHT),
@@ -33,7 +30,7 @@ module.exports = grammar({
     BLABLABLA: $ => /[^;]*/,
     NON_TERMINAL_NAME: $ => /[0-9A-Z_]+/,
     TERMINAL: $ => seq($.SYMBOL_TERMINAL_OPEN, repeat($.SPACING), optional($.ENCODING), $.RANGE_MIN_MAX, $.SYMBOL_TERMINAL_CLOSE),
-    ENCODING: $ => seq($.ENCODING_NAME, repeat1($.SPACING), '&', repeat($.SPACING)),
+    ENCODING: $ => seq($.ENCODING_NAME, repeat($.SPACING), $.SYMBOL_ENCODING_END, repeat($.SPACING)),
     ENCODING_NAME: $ => /[0-9a-z_]+/,
     MULTI: $ => choice($.MULTI_01, $.MULTI_0p, $.MULTI_1p, $.MULTI_X),
     MULTI_01: $ => '?',
@@ -46,6 +43,7 @@ module.exports = grammar({
     SYMBOL_MULTI_X_CLOSE: $ => '}',
     SYMBOL_TERMINAL_OPEN: $ => '[',
     SYMBOL_TERMINAL_CLOSE: $ => ']',
+    SYMBOL_ENCODING_END: $ => '&',
     SYMBOL_GROUP_OPEN: $ => '(',
     SYMBOL_GROUP_CLOSE: $ => ')',
     SYMBOL_COMMENT_START: $ => '--',

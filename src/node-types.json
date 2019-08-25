@@ -37,6 +37,10 @@
         {
           "type": "SPACING",
           "named": true
+        },
+        {
+          "type": "SYMBOL_ENCODING_END",
+          "named": true
         }
       ]
     }
@@ -403,10 +407,6 @@
     "named": true
   },
   {
-    "type": "&",
-    "named": false
-  },
-  {
     "type": "ENCODING_NAME",
     "named": true
   },
@@ -444,6 +444,10 @@
   },
   {
     "type": "SYMBOL_TERMINAL_CLOSE",
+    "named": true
+  },
+  {
+    "type": "SYMBOL_ENCODING_END",
     "named": true
   },
   {
