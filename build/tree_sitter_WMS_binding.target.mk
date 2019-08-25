@@ -40,13 +40,13 @@ CFLAGS_CC_Debug := \
 	-std=gnu++1y
 
 INCS_Debug := \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/include/node \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/src \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/openssl/config \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/openssl/openssl/include \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/uv/include \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/zlib \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/v8/include \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/include/node \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/src \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/openssl/config \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/openssl/openssl/include \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/uv/include \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/zlib \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/v8/include \
 	-I$(srcdir)/node_modules/nan \
 	-I$(srcdir)/src
 
@@ -85,13 +85,13 @@ CFLAGS_CC_Release := \
 	-std=gnu++1y
 
 INCS_Release := \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/include/node \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/src \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/openssl/config \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/openssl/openssl/include \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/uv/include \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/zlib \
-	-I/home/administrateur/.cache/node-gyp/12.8.0/deps/v8/include \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/include/node \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/src \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/openssl/config \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/openssl/openssl/include \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/uv/include \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/zlib \
+	-I/home/administrateur/.cache/node-gyp/12.8.1/deps/v8/include \
 	-I$(srcdir)/node_modules/nan \
 	-I$(srcdir)/src
 

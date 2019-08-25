@@ -4,8 +4,21 @@
     "WMS": {
       "type": "REPEAT",
       "content": {
-        "type": "SYMBOL",
-        "name": "RULE"
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "SPACING"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "RULE"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "COMMENT"
+          }
+        ]
       }
     },
     "RULE": {
@@ -38,28 +51,16 @@
               "name": "COMMENT"
             },
             {
-              "type": "BLANK"
+              "type": "SYMBOL",
+              "name": "RULE_END"
             }
           ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "RULE_END"
         }
       ]
     },
     "RULE_END": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": ";"
-        },
-        {
-          "type": "PATTERN",
-          "value": "[\\r\\n]*"
-        }
-      ]
+      "type": "STRING",
+      "value": ";"
     },
     "MIN": {
       "type": "SYMBOL",
@@ -205,8 +206,8 @@
       "value": "[0-9A-F]+"
     },
     "SPACING": {
-      "type": "STRING",
-      "value": " "
+      "type": "PATTERN",
+      "value": "[ \\n\\r\\t]"
     },
     "EQUAL": {
       "type": "SEQ",
@@ -234,6 +235,10 @@
         {
           "type": "SYMBOL",
           "name": "BLABLABLA"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "RULE_END"
         }
       ]
     },
@@ -253,6 +258,25 @@
           "name": "SYMBOL_TERMINAL_OPEN"
         },
         {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "SPACING"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "ENCODING"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "SYMBOL",
           "name": "RANGE_MIN_MAX"
         },
@@ -261,6 +285,37 @@
           "name": "SYMBOL_TERMINAL_CLOSE"
         }
       ]
+    },
+    "ENCODING": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "ENCODING_NAME"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "SPACING"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "&"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "SPACING"
+          }
+        }
+      ]
+    },
+    "ENCODING_NAME": {
+      "type": "PATTERN",
+      "value": "[0-9a-z_]+"
     },
     "MULTI": {
       "type": "CHOICE",

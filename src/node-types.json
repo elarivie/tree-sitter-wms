@@ -12,7 +12,30 @@
           "named": true
         },
         {
+          "type": "RULE_END",
+          "named": true
+        },
+        {
           "type": "SYMBOL_COMMENT_START",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ENCODING",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "ENCODING_NAME",
+          "named": true
+        },
+        {
+          "type": "SPACING",
           "named": true
         }
       ]
@@ -275,11 +298,6 @@
     }
   },
   {
-    "type": "RULE_END",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "TERMINAL",
     "named": true,
     "fields": {},
@@ -288,7 +306,15 @@
       "required": false,
       "types": [
         {
+          "type": "ENCODING",
+          "named": true
+        },
+        {
           "type": "RANGE_MIN_MAX",
+          "named": true
+        },
+        {
+          "type": "SPACING",
           "named": true
         },
         {
@@ -342,15 +368,23 @@
       "required": false,
       "types": [
         {
+          "type": "COMMENT",
+          "named": true
+        },
+        {
           "type": "RULE",
+          "named": true
+        },
+        {
+          "type": "SPACING",
           "named": true
         }
       ]
     }
   },
   {
-    "type": ";",
-    "named": false
+    "type": "RULE_END",
+    "named": true
   },
   {
     "type": "HEX",
@@ -366,6 +400,14 @@
   },
   {
     "type": "NON_TERMINAL_NAME",
+    "named": true
+  },
+  {
+    "type": "&",
+    "named": false
+  },
+  {
+    "type": "ENCODING_NAME",
     "named": true
   },
   {

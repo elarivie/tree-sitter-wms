@@ -1,0 +1,7 @@
+=====
+Test comment only.
+=====
+ -- hey;
+
+---
+(WMS (SPACING) (COMMENT (SYMBOL_COMMENT_START) (BLABLABLA) (RULE_END)) (SPACING))

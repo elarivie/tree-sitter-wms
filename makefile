@@ -12,12 +12,8 @@ PARSE:
 	reset; ./node_modules/.bin/tree-sitter generate; ./node_modules/.bin/tree-sitter parse ./corpus/WMS.wms
 
 .PHONY: TEST
-TEST:
+TEST: INSTALL
 	reset; ./node_modules/.bin/tree-sitter test;
-
-.PHONY: HIGHLIGHT
-HIGHLIGHT:
-	export PATH=:$PATH;reset; ./node_modules/.bin/tree-sitter highlight;
 
 .PHONY: PUBLISH
 PUBLISH:
